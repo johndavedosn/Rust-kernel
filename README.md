@@ -12,13 +12,13 @@ Since the kernel uses bootimage you can use :
 ```
 $ cargo bootimage 
 ```
-it will produce a bootable x86_64 .bin kernel in your ``target/x86_64-target/`` directory, Use something like QEMU in ordor to boot it.
+it will produce a bootable x86_64 .bin kernel in your ``target/x86_64-target/`` directory, Use something like QEMU in order to boot it.
 
 ## Booting with QEMU
 
-Install it if you haven't alreadt and then run : 
+Install it if you haven't already and then run : 
 
 ```
-qemu-system-x86_64 -drive format=raw,file=path/to/lernel
+qemu-system-x86_64 -drive format=raw,file=path/to/kernel
 ```
-If everything goes right you should see a QEMU windows saying "Hello World!".
+If everything goes right you should see a QEMU window saying "Hello World!".
