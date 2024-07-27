@@ -9,11 +9,17 @@ mod vga_buffer;
 pub extern "C" fn _start() -> ! {
     println!("Hello World{}", "!");
 
-    loop {}
+    my_kernel::init();
+    
+    #[cfg(test)]
+    test_main();
+
+    println!("It did not crash!");
+    my_kernel::hlt_loop();
 }
 
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     println!("{}", info);
-    loop {}
+    my_kernel::hlt_loop();   
 }
